@@ -4,13 +4,18 @@
 #include <chrono>
 
 #include "application/DefaultApplication.h"
+#include "application/TreadedApplication.h"
 
 int main(int argc, char *argv[]){
-    using Application::IRunnable, Application::DefaultApplication;
+    using Application::IRunnable, Application::DefaultApplication, Application::TreadedApplication;
 
     try {
         // create default application strategy
         std::unique_ptr<IRunnable> app = std::make_unique<DefaultApplication>();
+
+        /* slower than default
+        std::unique_ptr<IRunnable> app = std::make_unique<TreadedApplication>();
+         */
 
         auto start = std::chrono::high_resolution_clock::now();
         int result = app->run(argc, argv);

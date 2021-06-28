@@ -18,7 +18,10 @@ add_executable(visutech_task
         src/replace/InWordReplaceStrategy.h
         include/sort/SortStrategy.h
         src/sort/IgnoreCaseSortStrategy.cpp
-        src/sort/IgnoreCaseSortStrategy.h)
+        src/sort/IgnoreCaseSortStrategy.h
+        src/application/TreadedApplication.cpp
+        src/application/TreadedApplication.h)
+
 target_link_libraries(visutech_task
         pthread
         boost_thread
@@ -40,7 +43,9 @@ add_executable(visutech_task_tests
         test/parser/ParserTestCases.cpp
         test/application/DefaultApplicationTestCases.cpp
         test/replace/InWordReplaceStrategyTestCases.cpp
-        test/sort/IgnoreCaseSortStrategy.cpp)
+        test/sort/IgnoreCaseSortStrategy.cpp
+        src/application/TreadedApplication.cpp
+        src/application/TreadedApplication.h)
 
 target_link_libraries(visutech_task_tests
         gtest

@@ -1,0 +1,7 @@
+.gitignore
+.dockerignore
+Dockerfile
+makefile
+*.md
+cmake-build-debug
+cmake-build-debug/**

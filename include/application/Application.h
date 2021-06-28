@@ -11,6 +11,18 @@
 
 namespace Application {
 
+    class ApplicationException : public std::exception {
+        std::string _text;
+    public:
+        ApplicationException() = delete;
+        ApplicationException(const std::string& text){
+            _text = std::string("[APPLICATION]\t").append(text);
+        };
+        const char * what() const noexcept override {
+            return _text.c_str();
+        }
+    };
+
     // run application interface
     class IRunnable {
     public:
